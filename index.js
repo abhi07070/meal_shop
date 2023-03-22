@@ -17,21 +17,26 @@ async function getMealList() {
     `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`
   );
   let data = await res.json();
+  console.log(data)
   let mealString = data.meals
     .map((meal) => {
       if (searchInput == "") {
         display.innerHTML = "";
       } else {
         return `
-        <li id="list" class="list">
+    <li id="list" class="list">
         <div id="list-part">
-                <div class="img"><img src="${meal.strMealThumb}"/>
-                </div>
-                <div class="name"> ${meal.strMeal}
-                </div>
-                <button class="fav-btn" onclick="addfavItem(${meal.idMeal})">add favourite</button>
-                </div>
-        </li>`;
+            <div class="img">
+                <img src="${meal.strMealThumb}"/>
+            </div>
+            <div class="name">
+                ${meal.strMeal}
+            </div>
+            <a href="recipie.html?id=${meal.idMeal}">Details</a>
+            <button class="fav-btn" onclick="addfavItem(${meal.idMeal})">add favourite</button>
+        </div>
+    </li>`;
+
       }
     })
     .join("");
@@ -39,7 +44,7 @@ async function getMealList() {
 
   // working on the button when click the text and the color changed and when again click it's comes on the previous look
   let list = document.querySelectorAll(".fav-btn");
-  
+
   list.forEach((btn) => {
     let mark = true;
     btn.addEventListener("click", () => {
@@ -64,7 +69,7 @@ let fav = [];
 function addfavItem(id) {
   fav.push(id);
   localStorage.setItem("Mealsid", JSON.stringify(fav));
-  
+
   // console.log("this is fav arr",fav);
 
 }

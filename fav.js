@@ -22,17 +22,25 @@ data.map(async (item) => {
 
 let fav=[];
 function removefavItem(id) {
-  
-  fav = fav.filter((itemId) => itemId !== id);
-  
-  localStorage.setItem("Mealsid", JSON.stringify(fav));
-  
+  // Retrieve Mealsid data from local storage
+  let Mealsid = JSON.parse(localStorage.getItem("Mealsid")) || [];
+
+  // Remove the selected item from the Mealsid array
+  const index = Mealsid.indexOf(id);
+  if (index > -1) {
+    Mealsid.splice(index, 1);
+  }
+
+  // Update local storage with the updated Mealsid array
+  localStorage.setItem("Mealsid", JSON.stringify(Mealsid));
+
   const listItem = document.getElementById(id);
   console.log(listItem);
   if (listItem) {
     listItem.remove();
   }
 }
+
 
 
 

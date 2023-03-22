@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* background color to the body */
+body{
+    background: linear-gradient(to right, #262697, indigo, #682e68);
+}
+header div{
+display: flex;
+justify-content: space-evenly;
+width: 50%;
+margin-left: 25%;
+margin-top: 2%;
+height: 3rem;
+color: white;
+}
+h2 a{
+    text-decoration: none;
+    color:white;
+}
+input{
+    height: 4rem;
+    width: 30vw;
+    margin-left: 30%;
+    margin-top: 20px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+input:hover{
+    background-color: lightgray;
+}
+/* working on the button */
+#btn{
+    border-radius: 20px;
+    height: 4rem;
+    width: 10vw;
+    background-color:  lightgray;
+    font-size: 1rem;
+}
+/* when hover over the button */
+#btn:hover{
+    background-color:#262697;
+    color:white;
+}
+/* working on the meal list */
+#list{
+    height: 100%;
+    flex-direction: column;
+    width: 30%;
+    /* border: 2px solid red; */
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+ul {
+    display: flex;
+   list-style-type: none;
+   height: auto;
+   width: 90%;
+   /* border: 2px solid yellow; */
+   flex-wrap: wrap;
+   margin: auto;
+    
+}
+#list-part{
+    /* border: 2px solid black; */
+    height: 400px;
+    width: 320px; 
+}
+/* working on the meal imaages */
+li img{
+    margin-left:30px;
+    height: 80%;
+    width:80%;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: 1px solid lightgray;
+}
+/* when hover over the image of the meal */
+li img:hover{
+    opacity: 0.5;
+    transform: scale(1.2);
+    transition: all 1s;
+
+}
+li .name{
+    height: 15%;
+    width: 80%;
+    text-align: center;
+    margin-left: 40px;
+    /* border: 2px solid purple; */
+    font-size: 1.5rem;
+    color:white;
+}
+/* work on the favourite button here */
+.fav-btn {
+    height: 10%;
+    width: 40%;
+    font-size: 1.2rem;
+    margin-left: 30%;
+    border-radius: 40px;
+    background-color: pink;
+}
+/* when hovering over the favourite button */
+.fav-btn:hover{
+    transform: scale(1.1);
+    color: white;
+}
